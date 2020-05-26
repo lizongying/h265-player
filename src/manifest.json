@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "H265 Player",
+  "version": "0.0.2",
+  "description": "H265 Player. 能在chrome瀏覽器上播放H265等視頻。",
+  "browser_action": {
+    "default_title": "H265 Player"
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "worker_proxy.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "worker_proxy.js",
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "worker_proxy.html",
+    "downloader.js",
+    "decoder.js",
+    "libffmpeg.wasm"
+  ]
+}
