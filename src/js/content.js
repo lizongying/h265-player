@@ -55,8 +55,7 @@ window.onload = () => {
     //Player object.
     self.player = new Player();
 
-    var loadingDiv = document.getElementById('loading');
-    self.player.setLoadingDiv(loadingDiv);
+    self.player.setLoadingDiv(document.getElementById('loading'));
 
     //Formated logger.
     var logger = new Logger('Page');
@@ -82,9 +81,8 @@ window.onload = () => {
                 }
             }, 512 * 1024, false);
 
-            var timeTrack = document.getElementById('timeTrack');
-            var timeLabel = document.getElementById('timeLabel');
-            self.player.setTrack(timeTrack, timeLabel);
+            self.player.setTrack(document.getElementById('timeTrack'),
+                document.getElementById('timeLabel'));
         } else {
             self.player.pause();
         }
@@ -140,13 +138,6 @@ window.onload = () => {
         if (self.player.getState() === playerStatePlaying) {
             sideBar.style.visibility = 'hidden';
         }
-    };
-    sideBar.onmouseout = () => {
-        setTimeout(() => {
-            if (self.player.getState() === playerStatePlaying) {
-                sideBar.style.visibility = 'hidden';
-            }
-        }, 5000);
     };
     videoPlayer.onmouseover = () => {
         sideBar.style.visibility = 'visible';

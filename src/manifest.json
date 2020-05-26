@@ -1,16 +1,14 @@
 {
   "manifest_version": 2,
   "name": "H265 Player",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "H265 Player. 能在chrome瀏覽器上播放H265等視頻。",
   "browser_action": {
     "default_title": "H265 Player"
   },
   "content_security_policy": "script-src 'self'; object-src 'self'",
   "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
+    "activeTab"
   ],
   "background": {
     "persistent": false,

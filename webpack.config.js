@@ -14,7 +14,6 @@ module.exports = {
         filename: '[name].js',
         chunkFilename: '[name].chunk.js',
         path: path.join(__dirname, './dist'),
-        webassemblyModuleFilename: "[hash].wasm",
     },
     entry: {
         // background: './src/js/background',
@@ -22,8 +21,8 @@ module.exports = {
         content: './src/js/content',
         // popup: './src/js/popup',
         common: './src/js/lib/common',
-        downloader: './src/js/lib/downloader',
         decoder: './src/js/lib/decoder',
+        downloader: './src/js/lib/downloader',
         worker_proxy: './src/js/lib/worker_proxy',
     },
     module: {
