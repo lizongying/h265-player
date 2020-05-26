@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
   "name": "H265 Player",
-  "version": "0.0.4",
-  "description": "H265 Player. 能在chrome瀏覽器上播放H265等視頻。",
+  "version": "0.0.5",
+  "description": "支持在chrome播放H265等格式視頻。",
   "browser_action": {
     "default_title": "H265 Player"
   },
   "content_security_policy": "script-src 'self'; object-src 'self'",
   "permissions": [
-    "activeTab"
+    "http://video.oneniceapp.com/*"
   ],
   "background": {
     "persistent": false,
@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "http://video.oneniceapp.com/*"
       ],
       "js": [
         "worker_proxy.js",
